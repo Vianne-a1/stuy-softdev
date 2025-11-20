@@ -1,0 +1,154 @@
+benR -- 2024-11-25 20:02
+* Repo submodule linked
+    - Added p01 as a submodule under 5/Bareustoph__benjaminr143_tiffanyy31_timn3_endriti2
+* Completed repo structure
+    - Created directories: app, static, templates, keys
+    - Uploaded flag.jpg as our team flag
+    - Added devlog.txt for tracking project updates
+    - Added app/__init__.py to initialize the app module
+
+tiffanyY --2024-11-26 11:30
+- Made API keys for spoonful and Unsplashed
+- Updated design doc
+
+benR -- 2024-11-26 11:47
+- Added keys directory with each API key inside a txt document file
+- Began to code __init__.py with basic imports, session handling, initialization of flask app, and config
+
+benR -- 2024-11-26 19:21
+- Updated devlog and added devlog.pdf to p01 repository
+- Updated readme.md with a complete roster and roles, project description, and improved launch codes
+
+endritI - 2024-11-26-21:26
+- Added website map to design document
+
+benR -- 2024-11-26 22:55
+* Worked on __init__.py
+	- Added imports and removed config to separate file
+* Added Config.py
+	- Reads all API keys and sets up site secret key, as well as setup database
+* Updated design doc in repo
+* Created and added GoogleMaps API key
+
+timN -- 2024-11-27 02:00
+- Updated Design Doc: with 'WHY TAILWIND?' section
+
+benR -- 2024-11-27 23:01
+* Added .gitignore to protect keys and store other important information
+* Added jinja requirement
+* Added setup_db.py and other base documents
+	- Including routes, models, etc
+	
+benR -- 2024-11-28 00:41
+* Fixed import issues in __init__.py
+	- Removed routes.py and moved route definitions into __init__.py
+* Adjusted project structure to simplify the application entry point
+	- Tested GlobalBites to check proper rendering of the home page with the Google Maps API integrated
+* Updated home.html with basic Tailwind CSS setup and added Google Maps script
+* Ensured API keys are securely stored in keys/ directory and accessed via Config.py.
+
+benR -- 2024-11-28 19:20
+* Added different modes and button on main page
+	- Dark, light, and Topher modes
+* Created login, profile, and logout routes (not actually fully implemented yet though)
+* Added css styling
+
+tiffanyY --2024-12-02 11:21
+- Updated setup_db.py with code for threads.db
+- Added recents to db
+- Added comments of what else I need to add to DB
+
+benR -- 2024-12-02 20:49
+* Updated devlog
+	- Added more "Fleshing Out" and explanation for password hashing
+	- Explained how we are using GoogleMaps API for world map interactive
+	- Added recent_history database
+	- Added HTML group assignment
+	- Created a small Legend for component relationships
+	- Clarified "Target Ship Date"
+	
+benR -- 2024-12-02 21:21
+* Added login.html and register.html from old project (kept script)
+* Translated them to extend base.html and use similar tailwind styling (continuing color modes)
+* After popular request, removed "ugly" yellow color from Topher Mode. He would never deserve that..
+* Copied/fixed login/register logic from p00
+* Created basic functions and outline for models.py with User class to start
+
+tiffanyY -- 2024-12-03 11:39
+- Updated setup_db.py with basic DB setup according to updated design documents
+	- May need further updating as we go
+	- __init__.py cannot properly access USER table in database 
+- Updated readme with new launch instrictions
+
+benR -- 2024-120-03 11:58
+- Added users class in Models.py with numerous methods including: get_by_id, init, hash_password, etc
+- Used sha256 for password encryption
+- Removed circular import
+
+tiffanyY -- 2024 - 12 - 03 18:33
+- Updated models.py to properly link to database
+	- Was previously making a empty db file so there were missing table errors (purple screen of death)
+- Updated setup_db.py 
+- Made profile.html and updated base.html
+	- Profile page at the moment is just a color picker for a custom theme, not finished
+
+benR -- 2024-12-03 23:10
+- Changed tiffany's profile page to profile settings and kept old profile
+- Added buttons at bottom for home, logout, etc
+- Copied login page for reauthentication page when going from profile -> settings
+- Added change password in settings (that sucked :/)
+
+tiffanyY -- 2024 - 12 - 04 11:10
+- Added a new error if new pw = current pw
+* Flash shows up on login page instead of on settings page :/
+- Added recipe.html (idk how to spell anymore)
+- Fixed flash showing up on wrong page
+* Have to move down map cause it overlaps with dropdown menu for themes
+
+benR -- 2024-12-04 17:45
+* Fixed the error where text goes white in the light template, manually forced black text
+* Fixed input text for light and topher modes
+* Added country compatibility
+	- Made pop-up's on main page link to country page
+	- Basic template for now
+
+endritI -- 2024 - 12 - 05 11:23
+- Fixed topher mode colors
+
+tiffanyY -- 2024 - 12 - 5 11:42
+- Added userinput for cusine to design doc (google doc ver)
+
+benR -- 2024-12-05-21:47
+* Created proxies for recipies along with loading them in country.html
+* Created recipe.html which shows the ingredients and instructions
+* All recipes will show all of a countries recipies
+* Added routes for various erors like 404 and 500
+* Fixed database bug
+
+timN -- 2024-12-06-04:25
+- Worked on models.py (did not push yet because showcasing app today)
+    - added additional option for Users to change display name 
+
+tiffanyY -- 2024 - 12 - 6 11:40
+- Fixed a new login bug (file was moved and code couldn't access database)
+- Made a todo/working list
+- Updated design doc
+
+benR -- 2024-12-06-17:57
+- Fixed database
+- Formatted ingredients correctly
+- Limited downvotes/upvotes to one per recipe
+
+!! Working:
+	- Map -> recipies
+	- Login (and lots of sub features)
+
+?? To-Do:
+	- Fix redirects
+	- Fix custom themes
+	- Finish other features on design doc
+	- Update design doc
+	- Add a way for users to "disagree"/edit a country/cusine type
+	- Maybe "shopping list" feature
+	- threadzzz
+

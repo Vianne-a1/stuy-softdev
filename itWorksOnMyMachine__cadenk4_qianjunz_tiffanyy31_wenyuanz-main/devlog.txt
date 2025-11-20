@@ -1,0 +1,76 @@
+DESIGN REVISIONS THUS FAR:
+- Changed Map API
+- Merged maps, info pages, and filter
+====================================
+
+
+
+qianjunZ -- 2025-04-01 10:40
+- added basic files for a working page
+
+tiffanyY --2025-4-02 10:35
+- GOT NGINX WORKING ON CUSTOM DOMAIN TT
+- Added map to homepage
+
+qianjunZ -- 2025-04-02 10:30
+- created all HTML files
+
+wenZ -- 2025-4-03 11:00
+- Finished login and logout
+
+tiffanyY --2025-4-03 10:36
+- Did some html for map + home
+
+tiffanyY --2025-4-03 10:58
+- Added nav bar
+
+qianjunZ -- 2025-04-03 11:00
+- created the map and started creating marker but dont have api key
+
+tiffanyY --2025-4-07 9:19
+- Added CSS 
+
+tiffanyY --2025-4-07 10:45
+- Added base.html
+
+wenZ -- 2025-4-07 11:00
+- Updated base.html
+- Added markers to leaflet map api
+
+tiffanyY -- 2025 -4-9 10:46
+- Added button to CSS
+
+wenZ -- 2025-4-09 11:00
+- Changed reading of data to process name, country, description, longitude, latitude
+
+cadenK -- 2025-4-09 11:00
+- Created basic d3 map visualization to later be edited
+
+tiffanyY -- 2025-4-10
+- Changed gmaps API to Leaflet API (https://leafletjs.com/)
+
+qianjunZ -- 2025-04-11 10:30
+- created a working d3 chart, will add it to the website later
+
+wenZ -- 2025-4-12 11:00
+- Added a search function to filter by country
+
+qianjunZ -- 2025-04-13 15:30
+- added d3 to the website, no css yet
+
+wenZ -- 2025-4-15 11:00
+- Updated tw css on all sites
+
+tiffanyY -- 2025-4-21 
+- Updated design doc- API section and pages
+- Made site viewable w/p logins
+
+wenZ -- 2025-4-20 11:00
+- Fixed the D3 bar chart visualization and locations on map
+
+wenZ -- 2025-4-21 11:00
+- Added a favorite function for the different sites
+
+
+cadenK -- 2025-4-21 11:00
+- Fixed small login error

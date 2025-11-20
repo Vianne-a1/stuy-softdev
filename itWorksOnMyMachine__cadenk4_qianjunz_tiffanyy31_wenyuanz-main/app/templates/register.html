@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Register - itWorksOnMyMachine{% endblock %}
+{% block content %}
+
+<div class="flex justify-center items-center mt-10 select-none">
+  <section class="max-w-md w-full text-center bg-white shadow-md rounded-lg p-6">
+    <h2 class="mb-5 text-lg uppercase tracking-wide text-[#4b4945] font-mono font-semibold">
+      Create an Account
+    </h2>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class="mb-4 text-red-500 font-mono text-sm">
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <form action="/register" method="post" class="space-y-4">
+      <input type="text" name="username" placeholder="Username" required
+        class="w-full border border-gray-300 rounded px-4 py-2 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-purple-500" />
+      <input type="password" name="password" placeholder="Password" required
+        class="w-full border border-gray-300 rounded px-4 py-2 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-purple-500" />
+      <button type="submit"
+        class="bg-[#4b4945] text-white px-5 py-2 rounded cursor-pointer font-mono text-base hover:opacity-90 transition">
+        Register
+      </button>
+    </form>
+
+    <p class="mt-4 text-sm font-mono text-gray-600">Already have an account?</p>
+    <a href="/login">
+      <button type="button"
+        class="mt-2 border border-[#4b4945] bg-[#e6e0d8] text-[#333] px-5 py-2 rounded font-mono text-base hover:opacity-90 transition">
+        Login
+      </button>
+    </a>
+  </section>
+</div>
+
+{% endblock %}

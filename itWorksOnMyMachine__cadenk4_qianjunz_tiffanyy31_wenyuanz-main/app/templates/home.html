@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}Home - itWorksOnMyMachine{% endblock %}
+{% block content %}
+
+<div class="select-none">
+
+  <header class="text-center mt-10">
+    <h1 class="text-4xl font-bold">itWorksOnMyMachine (or does it?)</h1>
+    <p class="text-sm text-gray-600 font-mono">itAlsoLooksBetterOnMyMachine</p>
+  </header>
+
+  <hr class="my-8">
+
+  {% if username %}
+  <div class="flex justify-center items-center mt-10">
+    <section class="max-w-md w-full text-center bg-white shadow-md rounded-lg p-6">
+      <h2 class="mb-5 text-lg uppercase tracking-wide text-[#4b4945] font-mono font-semibold">
+        Welcome to<br>itWorksOnMyMachine!
+      </h2>
+
+  
+        <a href="{{ url_for('map') }}"
+        class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition">
+        Map
+        </a>
+
+
+        <a href="{{ url_for('density') }}"
+        class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">
+        D3 Density
+        </a>
+
+    </section>
+  </div>
+    
+  {% else %}
+    <div class="flex justify-center items-center mt-10">
+      <section class="max-w-md w-full text-center bg-white shadow-md rounded-lg p-6">
+        <h2 class="mb-5 text-lg uppercase tracking-wide text-[#4b4945] font-mono font-semibold">
+          Welcome to<br>itWorksOnMyMachine!
+        </h2>
+
+        <form action="/login">
+          <button type="submit"
+            class="bg-[#4b4945] text-white mt-5 px-5 py-2 rounded cursor-pointer font-mono text-base hover:opacity-90">
+            Log In
+          </button>
+        </form>
+
+        <form action="/register" class="mt-4">
+          <button type="submit"
+            class="bg-[#e6e0d8] text-[#333] mt-3 border-2 border-[#4b4945] px-5 py-2 rounded cursor-pointer font-mono text-base hover:opacity-90">
+            Sign Up
+          </button>
+        </form>
+      </section>
+    </div>
+  {% endif %}
+
+  <hr class="mt-20 mb-4">
+
+</div>
+{% endblock %}

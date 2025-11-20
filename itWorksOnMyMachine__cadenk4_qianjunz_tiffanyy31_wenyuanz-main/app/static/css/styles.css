@@ -1,0 +1,96 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f7f3eb;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4b4945;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+header h7 {
+    font-size: 15px;
+}
+section {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+section h2 {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    border-bottom: 2px solid #4b4945;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    color: #4b4945;
+}
+
+section p {
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+footer {
+    background-color: #4b4945;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: none;
+    border-bottom: 1px dotted #0066cc;
+}
+
+a:hover {
+    color: #004999;
+    border-bottom: 1px solid #004999;
+}
+
+nav {
+    background-color: #e6e0d8;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+nav a {
+    margin: 0 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+nav a:hover {
+    color: #4b4945;
+}
+
+button {
+    color: #0066cc;
+    text-decoration: none;
+    border-bottom: 1px dotted #0066cc;
+}
+
+button:hover {
+    color: #004999;
+    border-bottom: 1px solid #004999;
+}
+
+hr {
+    text-align: center;
+}

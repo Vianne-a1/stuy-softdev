@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title %}Home - Global Bites{% endblock %}
+{% block content %}
+<div class="mt-8">
+    <!-- search bar -->
+    <div class="flex justify-center mb-6 mt-6">
+        <input type="text" placeholder="Search for recipes, countries, or regions..." class="w-2/3 p-3 border border-gray-400 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <button class="bg-blue-500 border border-gray-400 text-white px-6 rounded-r-lg hover:bg-blue-600 transition">Search</button>
+    </div>
+
+    <!-- google map -->
+     <div id="map" class="w-full h-96 rounded-lg shadow-lg mt-20"></div>
+</div>
+
+<script>
+    function initMap() {
+        // create map of the world
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 2,
+            center: {lat: 20, lng: 0},
+            mapTypeId: 'terrain'
+        });
+
+        // regions definition with their coords
+        var countries = [
+            {name: 'Italy', lat: 41.8719, lng: 12.5674},
+            {name: 'France', lat: 46.2276, lng: 2.2137},
+            {name: 'China', lat: 35.8617, lng: 104.1954},
+            {name: 'Japan', lat: 36.2048, lng: 138.2529},
+            {name: 'India', lat: 20.5937, lng: 78.9629},
+            {name: 'Mexico', lat: 23.6345, lng: -102.5528},
+            {name: 'Thailand', lat: 15.8700, lng: 100.9925},
+            {name: 'Spain', lat: 40.4637, lng: -3.7492},
+            {name: 'Greece', lat: 39.0742, lng: 21.8243},
+            {name: 'USA', lat: 37.0902, lng: -95.7129},
+            {name: 'Brazil', lat: -14.2350, lng: -51.9253},
+            {name: 'Vietnam', lat: 14.0583, lng: 108.2772},
+            {name: 'Turkey', lat: 38.9637, lng: 35.2433},
+            {name: 'Germany', lat: 51.1657, lng: 10.4515},
+            {name: 'Morocco', lat: 31.7917, lng: -7.0926},
+            {name: 'South Korea', lat: 35.9078, lng: 127.7669},
+            {name: 'Peru', lat: -9.1899, lng: -75.0152},
+            {name: 'Argentina', lat: -38.4161, lng: -63.6167},
+            {name: 'Nigeria', lat: 9.0820, lng: 8.6753},
+            {name: 'Ethiopia', lat: 9.1450, lng: 40.4897},
+            {name: "Albania", lat: 41.1533, lng: 20.1683}
+        ];
+
+        // markets for each regions
+        countries.forEach(function(country) {
+            var marker = new google.maps.Marker({
+                position: {lat: country.lat, lng: country.lng},
+                map: map,
+                title: country.name
+            });
+
+            // info window when marker is clicked
+            var infoWindow = new google.maps.InfoWindow({
+                content: '<h3 class="text-xl font-bold">' + country.name + '</h3><p>Click to explore recipes from this country.</p>'
+            });
+
+            // checks if imarkeris clicked
+            marker.addListener('click', function() {
+                // encode country name to be url save
+                var encoded = encodeURIComponent(country.name);
+                window.location.href = '/country/' + encoded;
+            });
+
+            marker.addListener('mouseover', function() {
+                infoWindow.open(map, marker);
+            });
+
+            marker.addListener('mouseout', function() {
+                infoWindow.close();
+            });
+        });
+    }
+</script>
+<!-- google maps JavaScript API -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key={{ google_maps_api_key }}&callback=initMap"></script>
+{% endblock %}

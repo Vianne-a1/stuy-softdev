@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Search - itWorksOnMyMachine{% endblock %}
+{% block content %}
+<div class="container">
+    <h1>Search</h1>
+
+    
+    <div>
+        <input type="text" placeholder="Search..">
+        <button type="submit" class=>Search</button>
+      </div> 
+
+      <div>  <div class="dropdown">
+        <button class="dropbtn">Countries</button>
+        <div class="dropdown-content">
+          <a href="#">America</a>
+          <a href="#">Canada</a>
+          <a href="#">UK</a>
+        </div>
+      </div> </div>
+
+    {% if results %}
+        <h2>Results for "{{ query }}"</h2>
+        <ul class="search-results">
+            {% for site in results %}
+                <li class="site-item">
+                    <h3>{{ site.name }}</h3>
+                    <p><strong>Country:</strong> {{ site.country }}</p>
+                    <p><strong>Coordinates:</strong> {{ site.latitude }}, {{ site.longitude }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        {% if query %}
+            <p>No results found for "{{ query }}".</p>
+        {% endif %}
+    {% endif %}
+</div>
+{% endblock %}

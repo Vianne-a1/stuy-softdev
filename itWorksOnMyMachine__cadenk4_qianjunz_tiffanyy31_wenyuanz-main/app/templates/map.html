@@ -1,0 +1,158 @@
+{% extends "base.html" %}
+{% block title %}Home - itWorksOnMyMachine{% endblock %}
+{% block content %}
+
+<!-- Leaflet CSS -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  crossorigin=""
+/>
+
+<!-- Search Box -->
+<div class="relative w-64 font-mono mb-40">
+  <input
+    id="countrySearch"
+    type="text"
+    placeholder="Search by country..."
+    oninput="filterSuggestions()"
+    autocomplete="off"
+    class="w-full p-2 border border-gray-400 rounded"
+  >
+  <div
+    id="suggestions"
+    class="absolute top-full left-0 right-0 bg-white border border-gray-300 max-h-40 overflow-y-auto z-50 hidden rounded shadow"
+  ></div>
+</div>
+
+{% if session.get('username') %}
+  <div class="flex justify-end gap-2 mb-2">
+    <button
+      onclick="showOnlyFavorites()"
+      class="border border-blue-500 text-blue-500 px-4 py-1 rounded hover:bg-blue-100 transition">
+      Show Favorites
+    </button>
+
+    <button
+      onclick="clearMarkers()"
+      class="border border-red-500 text-red-500 px-4 py-1 rounded hover:bg-red-100 transition">
+      Unshow Favorites
+    </button>
+  </div>
+{% endif %}
+
+<!-- Map -->
+<div class="mt-4">
+  <div id="map" class="h-[80vh] w-full rounded shadow"></div>
+</div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+  const landmarks = {{ landmarks | tojson }};
+  const userFavorites = {{ favorites | list | tojson }};
+  const loggedIn = {{ 'true' if session.get('username') else 'false' }};
+  const map = L.map('map').setView([20, 0], 2);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors',
+  }).addTo(map);
+
+  const countries = [...new Set(landmarks.map(l => l.country))].filter(Boolean).sort();
+  let markers = [];
+
+  function clearMarkers() {
+    markers.forEach(m => map.removeLayer(m));
+    markers = [];
+  }
+
+  function showMarkers(data) {
+    clearMarkers();
+    data.forEach(l => {
+      const isFavorited = userFavorites.includes(l.id);
+      let popup = `
+        <div>
+          <b>${l.name}</b>
+          <br>${l.description}<br>
+          <i>${l.country}</i>
+      `;
+
+      if (loggedIn === true || loggedIn === "true") {
+        popup += `
+          <form method="POST" action="${isFavorited ? '/unfavorite' : '/favorite'}" class="flex justify-end mt-2">
+            <input type="hidden" name="landmark_id" value="${l.id}">
+            <button type="submit"
+              class="${isFavorited 
+                ? 'border border-gray-500 text-gray-500 hover:bg-gray-100'
+                : 'border border-red-500 text-red-500 hover:bg-red-100'} px-3 py-1 rounded transition">
+              ${isFavorited ? 'Unfavorite' : 'Favorite'}
+            </button>
+          </form>
+        `;
+      }
+
+      popup += `</div>`;
+
+      const marker = L.marker([l.latitude, l.longitude])
+        .addTo(map)
+        .bindPopup(popup);
+
+      markers.push(marker);
+    });
+  }
+
+  function filterMarkers(query) {
+    const filtered = landmarks.filter(l =>
+      l.country && l.country.toLowerCase() === query.toLowerCase()
+    );
+    showMarkers(filtered);
+  }
+
+  function showOnlyFavorites() {
+    const filtered = landmarks.filter(l => userFavorites.includes(l.id));
+    showMarkers(filtered);
+  }
+
+  function filterSuggestions() {
+    const input = document.getElementById("countrySearch");
+    const query = input.value.toLowerCase();
+    const suggestionBox = document.getElementById("suggestions");
+
+    suggestionBox.innerHTML = "";
+    if (!query) {
+      suggestionBox.classList.add("hidden");
+      return;
+    }
+
+    const matches = countries.filter(c => c.toLowerCase().includes(query));
+    if (matches.length === 0) {
+      suggestionBox.classList.add("hidden");
+      return;
+    }
+
+    matches.forEach(country => {
+      const div = document.createElement("div");
+      div.textContent = country;
+      div.className = "px-3 py-2 hover:bg-gray-100 cursor-pointer";
+      div.onclick = () => {
+        document.getElementById("countrySearch").value = country;
+        suggestionBox.classList.add("hidden");
+        filterMarkers(country);
+      };
+      suggestionBox.appendChild(div);
+    });
+
+    suggestionBox.classList.remove("hidden");
+  }
+
+  document.addEventListener("click", (e) => {
+    const suggestionBox = document.getElementById("suggestions");
+    const input = document.getElementById("countrySearch");
+    if (!suggestionBox.contains(e.target) && e.target !== input) {
+      suggestionBox.classList.add("hidden");
+    }
+  });
+</script>
+
+{% endblock %}

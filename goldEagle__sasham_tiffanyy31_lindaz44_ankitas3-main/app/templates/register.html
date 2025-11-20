@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+
+<!--snippet from https://stackoverflow.com/questions/66761712/change-flash-message-duration-in-flask-with-jinja2-templates-->
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-warning" role="alert">
+             {{message}}
+        </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+    
+    <body style="padding: 3%; text-align: center; width: 100%;">
+        <div>
+            <h3>Register to Save Stats & Play Multiplayer</h3>
+            <p>Guest mode allows only single-player games and does not store scores or leaderboard info.</p>
+
+            <form action="{{ url_for('register') }}" method="POST">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" placeholder="Enter username" required>
+                </div><br>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter password" required>
+                </div>
+                {% if warning %}
+                    <p style="color: red;">{{ warning }}</p>
+                {% endif %}
+                <button type="submit">Register Account</button>
+            </form>
+
+            <a href="{{ url_for('login') }}">Already have an account? Log in</a>
+        </div>
+    </body>
+{% endblock %}

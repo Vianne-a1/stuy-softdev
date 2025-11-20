@@ -1,0 +1,169 @@
+sashaM, ankitaS, tiffanyY, lindaZ -- 2025-4-30 IN CLASS
+- Began fleshing out design doc and main concepts for our website
+
+sashaM, ankitaS, tiffanyY, lindaZ -- 2025-5-1 IN CLASS
+- Working on researching the games that we are emulating and making decisions
+
+tiffanyY -- 2025-5-5 IN CLASS
+Did some basic HTML and PY
+
+lindaZ -- 2025-5-5 IN CLASS
+- made functions to call from wordsolver api and to create randomly generated string of Letters inspired from boggle game
+
+tiffanyY -- 2025-5-6 IN CLASS
+Added some parts of site mapping, base HTML, figured out color palette based on team flags
+
+ankitaS -- 2025-05-06
+- added drag and drop functionalities for anagrams
+- using JS to create a timer
+
+sashaM -- 2025-5-8 IN CLASS
+- Working on wordbites game
+
+ankitaS -- 2025-05-08
+- changed structure of letters in anagrams
+
+lindaZ -- 2025-5-8 IN CLASS
+- Created preliminary board for wordhunt
+
+sashaM -- 2025-5-9 IN CLASS
+- Working on wordbites game -- movable letters
+
+sashaM -- 2025-5-12 IN CLASS
+- Working on droplet hosting
+
+tiffanyY -- 2025 - 5- 12 IN CLASS
+_ implemented login and register and site map
+
+lindaZ -- 2025-5-12 IN CLASS
+- Working on incorporating randomly generated board in wordhunt
+- Able to connect letters by dragging on board
+
+sashaM -- 2025-5-12 13:00
+- Finished droplet hosting
+
+
+ankitaS -- 2025-05-12
+- added functionality to not drag and drop letters into same box
+
+sashaM -- 2025-5-13 IN CLASS
+- Droplet reload -- fixed all issues, should be running smoothly on there
+- Wordbites
+
+tiffanyY -- 2025-5-13 IN CLASS
+- Did cards for the game pages
+
+sashaM -- 2025-5-14 IN CLASS
+- Wordbites
+- created letter set functionality to generate randome letters to use for anagrams
+
+ankitaS -- 2025-05-14
+- fixed drag and drop issue
+- ensured each button can only drop into one
+
+lindaZ -- 2025-05-14
+- fixed issue with letters not showing up on wordhunt
+- working on checking words
+
+sashaM -- 2025-5-15 IN CLASS
+- Wordbites
+- Letters generated and moving, just need to check for words
+
+tiffanyY -- 2025-5-15 IN CLASS
+- fixed CSS to match flag (Brown looks bad tho)
+- fixed logout
+
+ankitaS -- 2025-5-15
+- created function to generate random 6 letters
+
+lindaZ -- 2025-5-15 IN CLASS
+- Wordhunt work checks functioning
+- Green highlight to inidicate to users
+
+sashaM -- 2025-5-15 23:00
+- Wordbites
+- General functionality (word recognition and score) works
+
+tiffanyy -- 2025 - 5 -16 
+- minor changes to css
+
+sashaM -- 2025-5-19 IN CLASS
+- PM Standup
+- Wordbites
+
+sashaM -- 2025-5-20 IN CLASS
+- Wordbites --attempt to fix
+
+sashaM -- 2025-5-21 IN CLASS
+- Wordbites (working on init minus formatting)
+- Began formatting Python according to standard conventions
+- Readme
+
+
+tiffanyy -- 2025 - 5 -22
+- fixed tables for wordbites(?)
+
+lindaZ -- 2025-05-24 16:18
+- Wordhunt time feature added
+- duplicate words not allowed
+
+ankitaS -- 2025-05-23
+- worked on time functionality 
+
+tiffanyy -- 2025 - 5 -27 
+- minor changes to css
+
+tiffanyY -- 2025-05-28
+- updated init functions to work with html
+
+lindaZ -- 2025-05-29 23:52
+- Fixed dict issue with profile
+- Wordhunt bug fix
+- Wordhunt db additions
+- wordhunt board will be added upon start of the game
+- working on challenge requests for wordhunt
+
+tiffanyY -- 2025-05-29
+- updated init functions for friends
+
+tiffanyY -- 2025-05-30
+- Fixed friends html UI
+
+tiffanyY -- 2025-05-31
+- Updated init to work 
+
+lindaZ -- 2025-06-02 02:18
+- Working challenges function for wordhunt
+- fixed login/registration flash messages
+- edited db return for user and user_id
+- Working on ending page for wh
+
+tiffanyY -- 2025-06-02
+- Wordbites UI
+
+sashaM -- 2025-06-01
+- droplet working
+
+sashaM -- 2025-06-02 IN CLASS
+- wordbites timer
+
+ankitaS -- 2025-06-02
+- working countdown timer
+- single player and challenge mose created
+
+sashaM -- 2025-06-03 IN CLASS
+- wordbites challenge
+
+sashaM -- 2025-06-04 IN CLASS
+- wordbites challenge
+
+ankitaS --2025-06-04
+- anagrams challenge mode interacting with db and single player interacting w db
+
+lindaZ -- 2025-06-04
+- working endpage screen (for solo and challenge games)
+- automatic redirect to endpage after end
+- non-logged-in users saved to db so endpage loads
+- override issues in db fixed (get_sent_wordhunt_challenges)
+
+

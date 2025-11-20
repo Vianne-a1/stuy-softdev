@@ -1,0 +1,148 @@
+:root {
+    /* New Primary Colors */
+    --gold: #f1c277;
+    --yellow: #f3d87e;
+    --olive: #b4b86a;
+    --green: #3d6a1f;
+    --dark-green: #033503;
+
+    /* Sand Palette (secondary/accents) */
+    --sand-light: #f9c36d;
+    --sand: #f3c478;
+    --sand-medium: #e8b769;
+    --sand-dark: #c08d3b;
+    --sand-deep: #8b5d13;
+}
+
+body {
+    font-family: 'Playpen Sans', sans-serif;
+    font-optical-sizing: auto;
+    background: linear-gradient(135deg, var(--gold), var(--yellow), var(--olive));
+    color: var(--dark-green);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: linear-gradient(135deg, var(--olive), var(--green));
+    border-bottom: 2px solid var(--gold);
+}
+
+/* Navbar Links */
+nav a {
+    color: var(--dark-green);
+    padding: 12px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    background: var(--yellow);
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background: var(--gold);
+    text-shadow: 0 0 5px var(--olive), 0 0 10px var(--yellow);
+}
+
+/* Navbar Buttons */
+button,
+.btn {
+    font-family: inherit;
+    color: var(--dark-green);
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    background: linear-gradient(135deg, var(--gold), var(--olive));
+    border: none;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(170, 176, 60, 0.4);
+    /* box-shadow: 0 0 10px var(--yellow), 0 0 20px var(--gold); */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover,
+.btn:hover {
+    background: linear-gradient(135deg, var(--olive), var(--gold));
+    box-shadow: 0 0 15px var(--olive), 0 0 30px var(--gold);
+}
+
+
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 24px;
+    background: #f8fafc;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+}
+
+
+
+/* Game Cards */
+.game-card,
+.card {
+    display: inline-block;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 12px;
+    background: rgba(249, 166, 32, 0.9);
+    /* gold */
+    box-shadow: 0 0 10px rgba(170, 176, 60, 0.4);
+    /* olive */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(255, 212, 73, 0.6), 0 0 30px rgba(84, 140, 47, 0.5);
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Responsive Images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12%;
+}
+
+/* Glow Animation */
+@keyframes glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 5px var(--gold), 0 0 10px var(--olive);
+    }
+
+    50% {
+        box-shadow: 0 0 15px var(--olive), 0 0 30px var(--gold);
+    }
+}
+
+.glow {
+    animation: glow 1.5s infinite;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .button-container {
+        flex-direction: column;
+    }
+}

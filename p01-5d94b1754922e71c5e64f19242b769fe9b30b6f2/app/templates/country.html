@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+{% block title %}{{ country_name }} - Global Bites{% endblock %}
+
+{% block content %}
+<div class="mt-8">
+    <h1 class="text-3xl font-bold mb-4 text-center">{{ country_name }}</h1>
+    {% if country_image %}
+    <div class="flex justify-center mb-6">
+        <img src="{{ country_image }}" alt="{{ country_name }} Image" class="max-w-md rounded shadow"/>
+    </div>
+    {% endif %}
+
+    <!-- search bar -->
+    <div class="flex justify-center mb-6 mt-6">
+        <input type="text" placeholder="Search for recipes, traditions, etc..." class="w-2/3 p-3 border border-gray-400 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <button class="bg-blue-500 border border-gray-400 text-white px-6 rounded-r-lg hover:bg-blue-600 transition">Search</button>
+    </div>
+
+    <!-- recipes -->
+    <section class="mb-8">
+        <h2 class="text-2xl font-semibold mb-4">Top Recipes</h2>
+        {% for recipe in recipes %}
+        <div class="mb-4 p-4 border rounded shadow">
+            <h3 class="text-xl font-bold mb-2">{{ recipe.title }}</h3>
+            {% if recipe.image %}
+            <img src="{{ recipe.image }}" alt="{{ recipe.title }}" class="w-64 h-48 object-cover rounded mb-2">
+            {% endif %}
+            <p class="mb-2">Upvotes: <span id="upvotes-{{ recipe.id }}">{{ recipe.upvotes }}</span> | Downvotes: <span id="downvotes-{{ recipe.id }}">{{ recipe.downvotes }}</span></p>
+            <div class="flex items-center space-x-4">
+                <button 
+                    class="vote-button px-4 py-2 rounded hover:bg-blue-600"
+                    data-recipe-id="{{ recipe.id }}" 
+                    data-country-name="{{ country_name }}" 
+                    data-action="upvote"
+                    id="upvote-button-{{ recipe.id }}"
+                >
+                    👍 Upvote
+                </button>
+
+                <button 
+                    class="vote-button px-4 py-2 rounded hover:bg-blue-600"
+                    data-recipe-id="{{ recipe.id }}" 
+                    data-country-name="{{ country_name }}" 
+                    data-action="downvote"
+                    id="downvote-button-{{ recipe.id }}"
+                >
+                    👎 Downvote
+                </button>
+            </div>
+            <a href="{{ url_for('recipe_page', country_name=country_name, recipe_id=recipe.id) }}" class="text-blue-500 hover:underline mt-2 block">Read More</a>
+        </div>
+        {% endfor %}
+        <a href="{{ url_for('country_recipes_all', country_name=country_name) }}" class="text-blue-500 hover:underline mt-2 block">All Recipes</a>
+    </section>
+
+    <!-- traditions  -->
+    <section class="mb-8">
+        <h2 class="text-2xl font-semibold mb-4">Traditions</h2>
+        {% if traditions %}
+            <!-- show traditions -->
+            {% for tradition in traditions %}
+                <div class="mb-4">
+                    <h3 class="text-xl font-bold">{{ tradition.title }}</h3>
+                    <p>{{ tradition.description }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No traditions available for {{ country_name }}.</p>
+        {% endif %}
+    </section>
+
+    <!-- badges Ssection -->
+    <section class="mb-8">
+        <h2 class="text-2xl font-semibold mb-4">Collect Badges</h2>
+        <!-- badge collection logic we need add :(  -->
+        <p>Earn badges by exploring {{ country_name }}!</p>
+        <!-- display -->
+    </section>
+
+    <!-- Fforums -->
+    <section class="mb-8">
+        <h2 class="text-2xl font-semibold mb-4">Forums</h2>
+        {% if forums %}
+            <!-- forum threads -->
+            {% for thread in forums %}
+                <div class="mb-4">
+                    <h3 class="text-xl font-bold">{{ thread.title }}</h3>
+                    <p>Started by {{ thread.author }} on {{ thread.date }}</p>
+                    <!--linkto thread here in future -->
+                    <a href="#" class="text-blue-500">View Thread</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No forum discussions available for {{ country_name }}. Be the first to start one!</p>
+        {% endif %}
+        <!-- link to create new-->
+        <a href="#" class="text-blue-500">Start a new discussion</a>
+    </section>
+
+</div>
+
+<script>
+    // update button styles for a specific recipe
+    function updateButtonStyles(recipeId, vote) {
+        const upvoteButton = document.getElementById(`upvote-button-${recipeId}`);
+        const downvoteButton = document.getElementById(`downvote-button-${recipeId}`);
+        
+        // reset styles
+        upvoteButton.style.backgroundColor = '';
+        downvoteButton.style.backgroundColor = '';
+        upvoteButton.style.color = '';
+        downvoteButton.style.color = '';
+
+        // apply styles based on vote
+        if (vote === 'up') {
+            upvoteButton.style.backgroundColor = 'green';
+            upvoteButton.style.color = 'white';
+        } else if (vote === 'down') {
+            downvoteButton.style.backgroundColor = 'red';
+            downvoteButton.style.color = 'white';
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        // attach click event listeners to all vote buttons
+        document.querySelectorAll(".vote-button").forEach(button => {
+            button.addEventListener("click", event => {
+                event.preventDefault();
+
+                const recipeId = button.dataset.recipeId;
+                const countryName = button.dataset.countryName;
+                const action = button.dataset.action;
+
+                fetch(`/country/${countryName}/recipe/${recipeId}/vote`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    body: new URLSearchParams({ action: action })
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.upvotes !== undefined && data.downvotes !== undefined) {
+                        // update vote counts
+                        document.querySelector(`#upvotes-${recipeId}`).innerText = data.upvotes;
+                        document.querySelector(`#downvotes-${recipeId}`).innerText = data.downvotes;
+
+                        // update button styles for this recipe
+                        updateButtonStyles(recipeId, data.current_vote);
+                    }
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                });
+            });
+        });
+    });
+    </script>
+    
+{% endblock %}
