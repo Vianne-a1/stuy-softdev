@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crossy Roads</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+      color: #000000
+    }
+    canvas {
+      background-color: #8fbc8f;
+      border: 2px solid black;
+    }
+    .chicken {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: yellow;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body class="flex flex-col">
+      <!-- Navigation Bar -->
+    <nav class="navbar bg-black dark:bg-gray-800 shadow w-full" role="navigation" aria-label="Main navigation">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="{{ url_for('home') }}" class="text-2xl font-bold text-gray-800 dark:text-gray-100">GG</a>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-gray-600 dark:text-gray-100 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+            <ul id="menu" class="hidden md:flex space-x-6 items-center">
+                {% set active_page = request.endpoint %}
+                <li><a href="{{ url_for('home') }}" class="text-gray-600 dark:text-gray-100 hover:text-gray-800 dark:hover:text-gray-300 {% if active_page == 'home' %}font-bold text-black dark:text-white{% endif %}">Home</a></li>
+                <li><a href="{{ url_for('settings') }}" class="text-gray-600 dark:text-gray-100 hover:text-gray-800 dark:hover:text-gray-300 {% if active_page == 'settings' %}font-bold text-black dark:text-white{% endif %}">Settings</a></li>
+                <li><a href="{{ url_for('game') }}" class="text-gray-600 dark:text-gray-100 hover:text-gray-800 dark:hover:text-gray-300 {% if active_page == 'game' %}font-bold text-black dark:text-white{% endif %}">Games</a></li>
+
+                {% if session.get('username') %}
+                    <li><a href="{{ url_for('settings') }}" class="bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600 transition">Profile</a></li>
+                    <li><a href="{{ url_for('logout') }}" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition">Logout</a></li>
+                {% else %}
+                    <li><a href="{{ url_for('login') }}" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">Login</a></li>
+                    <li><a href="{{ url_for('register') }}" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition">Sign Up</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Moosic -->
+    <div class="invisible">
+      <audio id="moosic" controls autoplay loop>
+          <source id="source" src="../static/music/classic.mp3" type="audio/mp3">
+      </audio>
+    </div>
+    
+    <canvas id="game" class="w-5/6 h-5/6"></canvas>
+    <script src="/static/js/crossy.js"></script>
+
+    <footer class="footer bg-black dark:bg-gray-800 shadow mt-8 w-full">
+        <div class="container mx-auto px-4 py-6 text-center text-gray-600 dark:text-gray-300">
+            &copy; GG_jessicay38_kevinl713_tiffanyy31_tracyy10
+        </div>
+    </footer>
+</body>
+</html>

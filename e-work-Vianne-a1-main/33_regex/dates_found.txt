@@ -1,0 +1,500 @@
+Line 1: 03/25/93
+Line 2: 6/18/85
+Line 3: 7/8/71
+Line 4: 9/27/75
+Line 5: 2/6/96
+Line 6: 7/06/79
+Line 7: 5/18/78
+Line 8: 10/24/89
+Line 9: 3/7/86
+Line 10: 4/10/71
+Line 11: 5/11/85
+Line 12: 4/09/75
+Line 13: 8/01/98
+Line 14: 1/26/72
+Line 15: 5/24/1990
+Line 16: 1/25/2011
+Line 17: 4/12/82
+Line 18: 10/13/1976
+Line 19: 4/24/98
+Line 20: 5/21/77
+Line 21: 7/21/98
+Line 22: 10/21/79
+Line 23: 3/03/90
+Line 24: 2/11/76
+Line 25: 07/25/1984
+Line 26: 4-13-82
+Line 27: 9/22/89
+Line 28: 9/02/76
+Line 29: 9/12/71
+Line 30: 10/24/86
+Line 31: 03/31/1985
+Line 32: 7/20/72
+Line 33: 4/12/87
+Line 34: 06/20/91
+Line 35: 5/12/2012
+Line 36: 3/15/83
+Line 37: 2/14/73
+Line 38: 5/24/88
+Line 39: 7/27/1986
+Line 40: 1-14-81
+Line 41: 7-29-75
+Line 42: 6/24/87
+Line 43: 8/14/94
+Line 44: 4/13/2002
+Line 45: 8/16/82
+Line 46: 2/15/1998
+Line 47: 7/15/91
+Line 48: 06/12/94
+Line 49: 9/17/84
+Line 50: 2/28/75
+Line 51: 11/22/75
+Line 52: 5/24/91
+Line 53: 6/13/92
+Line 54: 7/11/71
+Line 55: 12/26/86
+Line 56: 10/11/1987
+Line 57: 3/14/95
+Line 58: 12/01/73
+Line 59: 12/5/2010
+Line 60: 08/20/1982
+Line 61: 7/24/95
+Line 62: 8/06/83
+Line 63: 02/22/92
+Line 64: 6/28/87
+Line 65: 07/29/1994
+Line 66: 08/11/78
+Line 67: 10/29/91
+Line 68: 7/6/91
+Line 69: 1/21/87
+Line 70: 11/3/1985
+Line 71: 7/04/82
+Line 72: 4-13-89
+Line 73: 9/36/308, 7/11/77
+Line 74: 4/12/74
+Line 75: 09/19/81
+Line 76: 9/6/79
+Line 77: 12/5/87
+Line 78: 01/05/1999
+Line 79: 4/22/80
+Line 80: 10/04/98
+Line 81: 6/29/81
+Line 82: 8/04/78
+Line 83: 7/07/1974
+Line 84: 09/14/2000
+Line 85: 5/18/71
+Line 86: 8/09/1981
+Line 87: 6/05/93
+Line 88: 8/9/97
+Line 89: 12/8/82
+Line 90: 8/26/89
+Line 91: 10/13/95
+Line 92: 4/19/91
+Line 93: 04/08/2004
+Line 94: 9/20/76
+Line 95: 12/08/1990
+Line 96: 4/11/1974
+Line 97: 7/18/86
+Line 98: 3/31/91
+Line 99: 5/13/72
+Line 100: 11/14/83
+Line 101: 8/16/92
+Line 102: 10/05/97
+Line 103: 07/18/2002
+Line 104: 9/22/82
+Line 105: 2/24/74
+Line 106: 2/03/78
+Line 107: 2/11/2006
+Line 108: 8/22/83
+Line 109: 5/04/74
+Line 110: 7/20/2011
+Line 111: 6/17/95
+Line 112: 6/10/72
+Line 113: 10/16/82
+Line 114: 12/15/92
+Line 115: 12/8/97
+Line 116: 4/05/89
+Line 117: 12/04/87
+Line 118: 6/20/77
+Line 119: 4/27/2006
+Line 120: 07/17/92
+Line 121: 12/22/98
+Line 122: 10/02/96
+Line 123: 11/05/90
+Line 124: 5/04/77
+Line 125: 2/27/96
+Line 126: 24 Jan 2001
+Line 127: 10 Sep 2004
+Line 128: 26 May 1982
+Line 129: 28 June 2002
+Line 130: 06 May 1972
+Line 131: 25 Oct 1987
+Line 132: 14 Oct 1996
+Line 133: 30 Nov 2007
+Line 134: 28 June 1994
+Line 135: 14 Jan 1981
+Line 136: 10 Oct 1985
+Line 137: 11 February 1985
+Line 138: 10 Feb 1983
+Line 139: 05 Feb 1992
+Line 140: 21 Oct 2012
+Line 141: 14 Feb 1995
+Line 142: 30 May 2016
+Line 143: 22 Jan 1996
+Line 144: 14 Oct 1992
+Line 145: 06 Oct 2003
+Line 146: 18 Oct 1999
+Line 147: 11 Nov 2004
+Line 148: 30 May 2001
+Line 149: 02 Feb 1978
+Line 150: 09 Sep 1989
+Line 151: 12 March 1980
+Line 152: 22 June 1990
+Line 153: 28 Sep 2015
+Line 154: 13 Jan 1972
+Line 155: 06 Mar 1974
+Line 156: 10 Oct 1974
+Line 157: 26 May 1974
+Line 158: 10 Feb 1990
+Line 159: 23 Aug 2000
+Line 160: 26 May 2001
+Line 161: 21 Oct 2007
+Line 162: 19 Oct 2016
+Line 163: 05 Mar 1974
+Line 164: 29 Jan 1994
+Line 165: 21 Oct 1978
+Line 166: 18 August 1975
+Line 167: 11 Nov 1996
+Line 168: 01 Oct 1979
+Line 169: 13 Oct 1986
+Line 170: 21 Oct 1995
+Line 171: 24 Jan 2011
+Line 172: 04 Oct 1972
+Line 173: 23 Aug 1993
+Line 174: 18 Oct 2006
+Line 175: 04 Dec 1988
+Line 176: 21 Oct 1983
+Line 177: 26 May 2010
+Line 178: 18 Jan 1990
+Line 179: 15 Jun 1985
+Line 180: 10 Dec 1982
+Line 181: 09 Dec 1988
+Line 182: 18 August 1995
+Line 183: 13 June 1974
+Line 184: 26 May 2008
+Line 185: 11 Nov 2002
+Line 186: 17 Aug 1985
+Line 187: 13 Oct 2016
+Line 188: 14 Jan 2008
+Line 189: 12 March 2004
+Line 190: 21 Oct 1977
+Line 191: 10 Aug 2000
+Line 192: 30 Nov 1972
+Line 193: 06 May 1993
+Line 194: 18 Jan 1995
+Line 195: April 11, 1990
+Line 196: May 30, 2001
+Line 197: Feb 18, 1994
+Line 198: February 18, 1981
+Line 199: October. 11, 2013
+Line 200: Jan 24 1986
+Line 201: July 26, 1978
+Line 202: December 23, 1999
+Line 203: May 15, 1989
+Line 204: September 06, 1995
+Line 205: Mar. 10, 1976
+Line 206: Jan 27, 1983
+Line 207: October 23 1990
+Line 208: August 12 2004
+Line 209: September 01, 2012
+Line 210: July 25, 1983
+Line 211: August 11, 1989
+Line 212: April 17, 1992
+Line 213: July 24, 1999
+Line 214: July 11, 1997
+Line 215: Sep. 10, 1974
+Line 216: August 14, 1981
+Line 217: Nov 11, 1988
+Line 218: June 13, 2011
+Line 219: May 14, 1989
+Line 220: Dec 14 1975
+Line 221: June 25, 2012
+Line 222: Oct 18, 1980
+Line 223: May 15, 1998
+Line 224: October 14 1974
+Line 225: July 25, 1998
+Line 226: June 15, 1972
+Line 227: January 07, 1991
+Line 228: September. 15, 2011
+Line 229: September 1985
+Line 230: June 2011
+Line 231: May 1986
+Line 232: May 2016
+Line 233: July 1977
+Line 234: July, 1990
+Line 235: 2003
+Line 236: Oct 2015
+Line 237: May 1995
+Line 238: February 1976
+Line 239: January 1995
+Line 240: Feb 1978
+Line 241: May, 2011
+Line 242: May 2004
+Line 243: Nov 2010
+Line 244: Sep 2012
+Line 245: January, 2013
+Line 246: November 1990
+Line 247: July 1981
+Line 248: May 1983
+Line 249: July 1995
+Line 250: April 1993
+Line 251: May 2005
+Line 252: December 1998
+Line 253: Jan 2007
+Line 254: Feb 2016
+Line 255: August 1979
+Line 256: Oct 2014
+Line 257: Aug 1988
+Line 258: Sep 2015
+Line 259: Apr 1976
+Line 260: Nov 1979
+Line 261: February 2000
+Line 262: Oct 1986
+Line 263: Jun 2002
+Line 264: September 1981
+Line 265: June 2007
+Line 266: April 1989
+Line 267: September 1999
+Line 268: Oct 1980
+Line 269: Dec 2009
+Line 270: July 1992
+Line 271: May, 2006
+Line 272: August 2008
+Line 273: Feb 1993
+Line 274: February, 2010
+Line 275: April 1985
+Line 276: September 1984
+Line 277: April 1986
+Line 278: Apr 2007
+Line 279: September 1974
+Line 280: Sep 2013
+Line 281: July 1985
+Line 282: Aug 2004
+Line 283: May 2012
+Line 284: Feb 1977
+Line 285: Jan 1987
+Line 286: Sep 1983
+Line 287: January 2013
+Line 288: Mar 2010
+Line 289: August 2009
+Line 290: Sep 2007
+Line 291: December 2011
+Line 292: Jan 2004
+Line 293: November 1995
+Line 294: September 2008
+Line 295: February 1983
+Line 296: March 1983
+Line 297: Aug 1979
+Line 298: Jan 2009
+Line 299: 1993
+Line 300: March 1974
+Line 301: January 1994
+Line 302: Dec 1992
+Line 303: November 2004
+Line 304: January 1977
+Line 305: Mar 2002
+Line 306: Feb 2000
+Line 307: May, 2004
+Line 308: July 2006
+Line 309: Feb 1994
+Line 310: April 1977
+Line 311: Oct 1992
+Line 312: February, 1995
+Line 313: February 1989
+Line 314: 1978
+Line 315: January 2007
+Line 316: Jun 1976
+Line 317: May 2011
+Line 318: Mar, 1975
+Line 319: Jan 1978
+Line 320: July 1975
+Line 321: November 2012
+Line 322: June, 1999
+Line 323: October 1991
+Line 324: March 1973
+Line 325: October 1996
+Line 326: Jun 2007
+Line 327: October 1995
+Line 328: April 1999
+Line 329: May, 2001
+Line 330: March, 2000
+Line 331: April 1988
+Line 332: December 1993
+Line 333: June 1974
+Line 334: November 1997
+Line 335: July 1986
+Line 336: February 1973
+Line 337: March 1978
+Line 338: Dec 2007
+Line 339: Apr, 1998
+Line 340: March, 2005
+Line 341: May 1980
+Line 342: Nov 2007
+Line 343: March 1976
+Line 344: 6/1998
+Line 345: 6/2005
+Line 346: 10/1973
+Line 347: 9/2005
+Line 348: 03/1980
+Line 349: 12/2005
+Line 350: 5/1987
+Line 351: 5/2004
+Line 352: 8/1974
+Line 353: 3/1986
+Line 354: 10/1997
+Line 355: 3/1993
+Line 356: 3/1981
+Line 357: 9/2003
+Line 358: 10/1993
+Line 359: 1/1983
+Line 360: 7/1994
+Line 361: 12/2008
+Line 362: 10/1980
+Line 363: 8/2003
+Line 364: 12/1975
+Line 365: 11/2010
+Line 366: 7/1997
+Line 367: 7/2014
+Line 368: 9/2001
+Line 369: 8/1986
+Line 370: 1/1978
+Line 371: 9/1975
+Line 372: 1/2009
+Line 373: 5/1995
+Line 374: 8/1989
+Line 375: 11/2000
+Line 376: 06/1973
+Line 377: 2/1999
+Line 378: 6/2001
+Line 379: 12/1978
+Line 380: 8/2009
+Line 381: 7/1973
+Line 382: 1/2014
+Line 383: 09/1975
+Line 384: 12/2012
+Line 385: 5/1999
+Line 386: 7/1989
+Line 387: 7/2009
+Line 388: 11/1998
+Line 389: 3/1995
+Line 390: 2/2009
+Line 391: 08/1988
+Line 392: 4/2007
+Line 393: 5/2000
+Line 394: 4/2012
+Line 395: 10/2001
+Line 396: 2/1977
+Line 397: 8/2008
+Line 398: 2/1983
+Line 399: 5/1979
+Line 400: 1/1992
+Line 401: 11/2008
+Line 402: 12/2014
+Line 403: 4/1974
+Line 404: 10/1981
+Line 405: 10/1986
+Line 406: 03/1973
+Line 407: 12/1994
+Line 408: 8/1999
+Line 409: 10/2010
+Line 410: 10/1994
+Line 411: 01/2007
+Line 412: 8/2010
+Line 413: 03/1990
+Line 414: 11/2016
+Line 415: 4/2004
+Line 416: 2/1973
+Line 417: 7/1987
+Line 418: 8/2000
+Line 419: 8/1975
+Line 420: 5/1977
+Line 421: 3/2000
+Line 422: 9/1984
+Line 423: 4/1973
+Line 424: 12/1986
+Line 425: 4/1979
+Line 426: 7/2004
+Line 427: 11/1984
+Line 428: 5/2016
+Line 429: 12/2007
+Line 430: 11/1982
+Line 431: 06/1981
+Line 432: 4/2013
+Line 433: 4/1999
+Line 434: 5/2006
+Line 435: 10/1978
+Line 436: 12/1989
+Line 437: 2/1974
+Line 438: 11/1986
+Line 439: 4/1983
+Line 440: 10/2014
+Line 441: 6/1989
+Line 442: 9/1980
+Line 443: 9/1992
+Line 444: 9/2000
+Line 445: 7/1981
+Line 446: 1/2008
+Line 447: 4/2002
+Line 448: 7/1985
+Line 449: 5/2010
+Line 450: 8/2002
+Line 451: 1/1994
+Line 452: 12/2004
+Line 453: 3/2003
+Line 454: 7/1991
+Line 455: 7/1982
+Line 456: 1984
+Line 457: 2000
+Line 458: 2001
+Line 459: 1982
+Line 460: 1998
+Line 461: 2012
+Line 462: 1991
+Line 463: 1988
+Line 464: 2014
+Line 465: 2016
+Line 466: 1976
+Line 467: 1981
+Line 468: 2011
+Line 469: 1997
+Line 470: 2003
+Line 471: 1983
+Line 472: 1999
+Line 473: 2010
+Line 474: 1975
+Line 475: 1972
+Line 476: 2015
+Line 477: 1989
+Line 478: 1994
+Line 479: 1993
+Line 480: 1996
+Line 481: 2013
+Line 482: 1974
+Line 483: 1990
+Line 484: 1995
+Line 485: 2004
+Line 486: 1987
+Line 487: 1973
+Line 488: 1992
+Line 489: 1977
+Line 490: 1985
+Line 491: 0 dates
+Line 492: 2009
+Line 493: 1986
+Line 494: 1978
+Line 495: 2002
+Line 496: 1979
+Line 497: 2006
+Line 498: 2008
+Line 499: 2005
+Line 500: 1980

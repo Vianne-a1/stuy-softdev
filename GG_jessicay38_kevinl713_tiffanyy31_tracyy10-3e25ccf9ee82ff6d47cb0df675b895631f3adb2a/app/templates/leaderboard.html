@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Leaderboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <!-- Navigation Bar -->
+    <nav class="navbar bg-black dark:bg-gray-800 shadow" role="navigation" aria-label="Main navigation">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="{{ url_for('home') }}" class="text-2xl font-bold text-gray-800 dark:text-gray-100">GG</a>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-gray-600 dark:text-gray-100 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+            <ul id="menu" class="hidden md:flex space-x-6 items-center">
+                {% set active_page = request.endpoint %}
+                <li><a href="{{ url_for('home') }}" class="text-gray-600 dark:text-gray-100 hover:text-gray-800 dark:hover:text-gray-300 {% if active_page == 'home' %}font-bold text-black dark:text-white{% endif %}">Home</a></li>
+                <li><a href="{{ url_for('settings') }}" class="text-gray-600 dark:text-gray-100 hover:text-gray-800 dark:hover:text-gray-300 {% if active_page == 'settings' %}font-bold text-black dark:text-white{% endif %}">Settings</a></li>
+                <li><a href="{{ url_for('game') }}" class="text-gray-600 dark:text-gray-100 hover:text-gray-800 dark:hover:text-gray-300 {% if active_page == 'game' %}font-bold text-black dark:text-white{% endif %}">Games</a></li>
+
+                {% if session.get('username') %}
+                    <li><a href="{{ url_for('settings') }}" class="bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600 transition">Profile</a></li>
+                    <li><a href="{{ url_for('logout') }}" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition">Logout</a></li>
+                {% else %}
+                    <li><a href="{{ url_for('login') }}" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">Login</a></li>
+                    <li><a href="{{ url_for('register') }}" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition">Sign Up</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="grid justify-items-center grid-flow-row grid-col-4 gap-10 ml-10 mb-10 mr-10 -mt-10 pl-50 pr-50">
+        <div id="winner" class="text-yellow-500 glow w-1/2 text-center row-start-5 row-span-10 bg-[#f7ecb7] rounded-t-lg opacity-85 border-8 border-yellow-400"> 
+            <p class="text-3xl uppercase truncate font-extrabold italic mb-3 mt-14">{{topTen[0][0]}}<p>
+            <p class="italic font-light mb-10"> "{{topThree[0][0]}}" </p>
+            <p> HIGHEST SCORE: <p>
+            <p class="text-7xl font-extrabold italic mt-10"> {{topTen[0][1]}} </p>
+        </div>
+        <div id="winner" class="text-[#73706e] glow w-1/2 text-center row-start-7 row-span-8 bg-[#bab9b8] border-8 border-[#858483] rounded-t-lg opacity-85"> 
+            <p class="text-3xl uppercase truncate font-bold italic mb-3 mt-10">{{topTen[1][0]}}<p>
+            <p class="italic font-light mb-8"> "{{topThree[1][0]}}" </p>
+            <p class=""> HIGHEST SCORE: <p>
+            <p class="text-7xl font-extrabold italic mt-4">{{topTen[1][1]}}<p>
+        </div>
+        <div id="winner" class="text-[#a6795d] glow w-1/2 text-center row-start-9 row-span-6 bg-[#dbab8c] border-8 border-[#b58669] rounded-t-lg opacity-75"> 
+            <p class="text-3xl uppercase truncate font-bold italic mb-1 mt-6">{{topTen[2][0]}}<p>
+            <p class="italic font-light mb-6"> "{{topThree[2][0]}}" </p>
+            <p> HIGHEST SCORE: <p>
+            <p class="text-7xl font-extrabold italic mt-2 mb-2">{{topTen[2][1]}}<p>
+        </div>
+        <div class="text-[#282c40] w-full content-center row-start-3 row-span-12 bg-[#767a8c] border-8 border-[#282c40] rounded-t-lg opacity-85"> 
+            <p class="text-3xl uppercase truncate text-center font-extrabold mb-5 mt-3"> Top Ten Players </p>
+            <p class="text-2xl truncate ml-14 mr-14 italic">{% if topTen[0][0] == "" %}This could be you!{% endif %}{% if topTen[0][0] != "" %}{{topTen[0][0]}} : {{topTen[0][1]}}{% endif %}<p>
+            <p class="text-2xl truncate ml-14 mr-14 italic">{% if topTen[1][0] == "" %}This could be you!{% endif %}{% if topTen[1][0] != "" %}{{topTen[1][0]}} : {{topTen[1][1]}}{% endif %}<p>
+            <p class="text-2xl truncate ml-14 mr-14 italic">{% if topTen[2][0] == "" %}This could be you!{% endif %}{% if topTen[2][0] != "" %}{{topTen[2][0]}} : {{topTen[2][1]}}{% endif %}<p>
+            <p class="text-2xl truncate ml-14 mr-14 italic">{% if topTen[3][0] == "" %}This could be you!{% endif %}{% if topTen[3][0] != "" %}{{topTen[3][0]}} : {{topTen[3][1]}}{% endif %}<p>
+            <p class="text-2xl truncate ml-14 mr-14 italic">{% if topTen[4][0] == "" %}This could be you!{% endif %}{% if topTen[4][0] != "" %}{{topTen[4][0]}} : {{topTen[4][1]}}{% endif %}<p>
+            <p class="text-2xl truncate ml-14 mr-14 italic">{% if topTen[5][0] == "" %}This could be you!{% endif %}{% if topTen[5][0] != "" %}{{topTen[5][0]}} : {{topTen[0][1]}}{% endif %}<p>
+            <p class="text-2xl truncate ml-14 mr-14 italic">{% if topTen[6][0] == "" %}This could be you!{% endif %}{% if topTen[6][0] != "" %}{{topTen[6][0]}} : {{topTen[6][1]}}{% endif %}<p>
+            <p class="text-2xl truncate ml-14 mr-14 italic">{% if topTen[7][0] == "" %}This could be you!{% endif %}{% if topTen[7][0] != "" %}{{topTen[7][0]}} : {{topTen[7][1]}}{% endif %}<p>
+            <p class="text-2xl truncate ml-14 mr-14 italic">{% if topTen[8][0] == "" %}This could be you!{% endif %}{% if topTen[8][0] != "" %}{{topTen[8][0]}} : {{topTen[8][1]}}{% endif %}<p>
+            <p class="text-2xl truncate ml-14 mr-14 italic">{% if topTen[9][0] == "" %}This could be you!{% endif %}{% if topTen[9][0] != "" %}{{topTen[9][0]}} : {{topTen[9][1]}}{% endif %}<p>
+        </div>
+    </div>
+    <div class="">
+        <img src="../static/images/gold.png" class="imgPOS gold rotate-12">
+        <img src="../static/images/silver.png" class="imgPOS silver -rotate-12">
+        <img src="../static/images/bronze.png" class="imgPOS bronze rotate-6 -skew-x-3">
+    <div>
+    
+    <!-- Moosic -->
+    <div class="collapse imgPOS">
+      <audio id="moosic" controls autoplay loop>
+          <source id="source" src="../static/music/leader.mp3" type="audio/mp3">
+      </audio>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer bg-black dark:bg-gray-800 shadow mt-8">
+        <div class="container mx-auto px-4 py-6 text-center text-gray-600 dark:text-gray-300">
+            &copy; GG_jessicay38_kevinl713_tiffanyy31_tracyy10
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+    {% block scripts %}
+    {% endblock %}
+</body>
+</html>
+
